@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python 算法讲义：覆盖 LeetCode 前 400 题</title>
+<meta name="description" content="用 Python 讲解算法，覆盖 LeetCode 前 400 题全部核心算法的静态学习网站（Markdown 书籍）">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- 顶部工具栏 -->
+<header class="topbar">
+  <div class="topbar-left">
+    <button id="btnMenu" class="icon-btn" title="目录" aria-label="打开目录">☰</button>
+    <a class="brand" href="#home">
+      <span class="brand-title">Python 算法讲义</span>
+      <span class="brand-sub">LeetCode 前 400 题全覆盖</span>
+    </a>
+  </div>
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input id="searchInput" type="text" placeholder="搜索全书内容…（支持空格分隔多个关键词）" autocomplete="off">
+    <span id="searchShortcut" class="search-shortcut">Ctrl+K</span>
+  </div>
+  <div class="topbar-right">
+    <button id="btnFontDown" class="icon-btn" title="减小字号" aria-label="减小字号">A−</button>
+    <button id="btnFontUp" class="icon-btn" title="增大字号" aria-label="增大字号">A+</button>
+    <button id="btnTheme" class="icon-btn" title="切换深色/浅色主题" aria-label="切换主题">🌙</button>
+    <button id="btnAppendixTop" class="icon-btn" title="附录速查" aria-label="附录速查">📚</button>
+  </div>
+</header>
+
+<!-- 搜索面板 -->
+<div id="searchPanel" class="search-panel hidden">
+  <div id="searchResults" class="search-results"></div>
+  <div id="searchEmpty" class="search-empty hidden">没有找到匹配内容，试试其他关键词</div>
+</div>
+
+<!-- 阅读进度条 -->
+<div id="progressBar" class="progress-bar"></div>
+
+<div class="layout">
+  <!-- 侧边栏：目录 -->
+  <nav id="sidebar" class="sidebar">
+    <div class="sidebar-head">目录</div>
+    <ul id="tocList" class="toc-list"></ul>
+  </nav>
+  <div id="sidebarMask" class="sidebar-mask"></div>
+
+  <!-- 主内容区 -->
+  <main id="main" class="main">
+    <div id="homeView" class="home-view">
+      <div class="home-card">
+        <h1>《Python 算法讲义：覆盖 LeetCode 前 400 题》</h1>
+        <p class="home-desc">用 Python 讲解算法 · 通俗易懂 · 26 个专题覆盖前 400 题全部核心算法 · 477 个代码块全部实测验证</p>
+        <p class="home-version">配套 478 个 Python 代码块（含教学片段）· 每段代码附断言可独立运行 · 附录 B 提供题号对照</p>
+        <div class="home-actions">
+          <button id="btnStart" class="btn-primary">📖 开始阅读（第 1 章）</button>
+          <button id="btnAppendix" class="btn-secondary">📚 附录速查</button>
+          <button id="btnSearch" class="btn-secondary">🔍 搜索全书</button>
+        </div>
+        <div class="home-features">
+          <span>✓ 全文搜索（Ctrl+K）</span><span>✓ 目录导航</span><span>✓ 代码高亮与一键复制</span><span>✓ 深浅主题</span><span>✓ 字号调节</span><span>✓ 阅读进度</span>
+        </div>
+      </div>
+      <div id="homeToc" class="home-toc"></div>
+    </div>
+    <article id="articleView" class="article-view hidden">
+      <div id="articleContent" class="article-content markdown-body"></div>
+      <div class="article-nav">
+        <button id="btnPrev" class="nav-btn">← 上一章</button>
+        <button id="btnNext" class="nav-btn">下一章 →</button>
+      </div>
+    </article>
+  </main>
+</div>
+
+<button id="btnTop" class="btn-top hidden" title="回到顶部">↑</button>
+
+<!-- 数据（由 tools/build_site.py 生成，file:// 直接打开也能用） -->
+<script src="data/README.js"></script>
+<script src="data/00-导读与使用说明.js"></script>
+<script src="data/ch01-复杂度分析.js"></script>
+<script src="data/ch02-数组基础与指针技巧.js"></script>
+<script src="data/ch03-哈希表.js"></script>
+<script src="data/ch04-双指针与滑动窗口.js"></script>
+<script src="data/ch05-二分查找.js"></script>
+<script src="data/ch06-排序算法.js"></script>
+<script src="data/ch07-链表.js"></script>
+<script src="data/ch08-栈与队列.js"></script>
+<script src="data/ch09-单调栈与单调队列.js"></script>
+<script src="data/ch10-二叉树基础与遍历.js"></script>
+<script src="data/ch11-二叉树进阶.js"></script>
+<script src="data/ch12-二叉搜索树.js"></script>
+<script src="data/ch13-堆与优先队列.js"></script>
+<script src="data/ch14-回溯算法.js"></script>
+<script src="data/ch15-贪心算法.js"></script>
+<script src="data/ch16-动态规划入门.js"></script>
+<script src="data/ch17-动态规划进阶-字符串与区间.js"></script>
+<script src="data/ch18-动态规划进阶-背包序列与股票.js"></script>
+<script src="data/ch19-图-遍历与连通性.js"></script>
+<script src="data/ch20-拓扑排序并查集与图进阶.js"></script>
+<script src="data/ch21-字符串算法.js"></script>
+<script src="data/ch22-Trie字典树.js"></script>
+<script src="data/ch23-位运算.js"></script>
+<script src="data/ch24-数学与数论.js"></script>
+<script src="data/ch25-前缀和与高级数据结构.js"></script>
+<script src="data/ch26-设计与数据流与随机化.js"></script>
+<script src="data/附录A-复杂度速查表.js"></script>
+<script src="data/附录B-LeetCode前400题对照表.js"></script>
+<script src="data/附录C-代码验证与运行指南.js"></script>
+<script src="data/附录D-中英术语表.js"></script>
+
+<script src="js/markdown.js"></script>
+<script src="js/highlight.js"></script>
+<script src="js/search.js"></script>
+<script src="js/vendor/mermaid.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

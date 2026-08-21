@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+node_modules/
+
+# 验证流水线临时产物
+verify/_tmp/
+
+# 系统文件
+Thumbs.db
+.DS_Store
